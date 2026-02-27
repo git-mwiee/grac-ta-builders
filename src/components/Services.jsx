@@ -44,9 +44,6 @@ export default function Services() {
     <section className="services" id="services">
       <div className="servicesHead">
         <h2>Our Services</h2>
-        <p>
-         Services
-        </p>
       </div>
 
       <div className="serviceGrid">
