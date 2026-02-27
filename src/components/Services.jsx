@@ -45,8 +45,7 @@ export default function Services() {
       <div className="servicesHead">
         <h2>Our Services</h2>
         <p>
-          Here are sample services (we can update these anytime once you have the
-          real list).
+         Services
         </p>
       </div>
 
