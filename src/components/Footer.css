@@ -1,0 +1,6 @@
+footer {
+  background: var(--primary-blue);
+  color: white;
+  text-align: center;
+  padding: 26px 0;
+}

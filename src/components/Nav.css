@@ -1,0 +1,102 @@
+:root {
+  --primary-red: #b11226;
+  --primary-blue: #0d3b66;
+  --light-blue: #1d5fa7;
+  --bg-white: #ffffff;
+  --light-gray: #f4f6f8;
+}
+
+.nav {
+  background: var(--bg-white);
+  padding: 16px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--primary-red);
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--primary-blue);
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.navLinks a:hover {
+  color: var(--primary-red);
+}
+
+.book-btn {
+  background-color: var(--primary-red);
+  color: white !important;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.book-btn:hover {
+  background-color: #8f0e1d;
+}
+
+.menuBtn {
+  display: none;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--primary-blue);
+}
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+  .nav {
+    padding: 14px 16px;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .navLinks {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 62px;
+    background: white;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    display: none;
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .book-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+  }
+}

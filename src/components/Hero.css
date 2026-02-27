@@ -1,0 +1,148 @@
+.hero {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+  color: white;
+  padding: 80px 0; /* no side padding here */
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%; /* content padding */
+}
+
+.heroText h1 {
+  font-size: 48px;
+  margin: 0 0 14px;
+  line-height: 1.1;
+}
+
+.heroText p {
+  font-size: 18px;
+  max-width: 580px;
+  margin: 0;
+  opacity: 0.92;
+}
+
+.cta {
+  margin-top: 22px;
+  padding: 14px 28px;
+  border: none;
+  background-color: var(--primary-red);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cta:hover {
+  background-color: #8f0e1d;
+}
+
+/* ===== Carousel ===== */
+.carouselWrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 10px 0;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollLeft 18s linear infinite;
+}
+
+.carouselCard {
+  flex: 0 0 auto;
+  width: 170px;
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.carouselCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fade edges like your sample */
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 70px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, rgba(13,59,102,1), rgba(13,59,102,0));
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, rgba(13,59,102,1), rgba(13,59,102,0));
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Move by half the track (because we duplicated the images) */
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation when hover (optional) */
+.carouselWrap:hover .carouselTrack {
+  animation-play-state: paused;
+}
+
+/* ✅ Respect user accessibility setting */
+@media (prefers-reduced-motion: reduce) {
+  .carouselTrack {
+    animation: none;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 60px 16px;
+  }
+
+  .heroText h1 {
+    font-size: 34px;
+  }
+
+  .heroText p {
+    font-size: 16px;
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .carouselCard {
+    width: 140px;
+    height: 190px;
+  }
+}
